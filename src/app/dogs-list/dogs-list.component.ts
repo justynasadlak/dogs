@@ -8,12 +8,13 @@ import { DogDataService } from '../services/dog-data.service';
 })
 export class DogsListComponent implements OnInit {
 
-  constructor(private dogDataService: DogDataService) { }
+  dogs = this.dogDataService.dogsList;
+
+  constructor(private dogDataService: DogDataService) {
+  }
 
   ngOnInit() {
     this.dogDataService.getAllDogs();
   }
-
-  dogs = this.dogDataService.dogsList;
 
 }

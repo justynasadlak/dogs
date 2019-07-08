@@ -5,15 +5,18 @@ import {
   MatCardModule,
   MatCheckboxModule,
   MatIconModule,
-  MatInputModule, MatListModule, MatOptionModule,
-  MatProgressSpinnerModule, MatSelectModule, MatSidenavModule
+  MatInputModule,
+  MatListModule,
+  MatOptionModule,
+  MatProgressSpinnerModule,
+  MatSelectModule,
+  MatSidenavModule
 } from '@angular/material';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,
+    CommonModule
   ],
   exports: [
     MatButtonModule,
@@ -21,7 +24,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatCardModule,
     MatCheckboxModule,
     MatIconModule,
-    BrowserAnimationsModule,
     MatProgressSpinnerModule,
     MatSidenavModule,
     MatListModule,
@@ -29,4 +31,5 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatSelectModule
   ]
 })
-export class CustomMaterialModule { }
+export class CustomMaterialModule {
+}

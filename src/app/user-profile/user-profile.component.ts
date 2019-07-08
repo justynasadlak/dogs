@@ -3,6 +3,7 @@ import { UserDataService } from '../services/user-data.service';
 import { User } from '../model/user';
 import { Router } from '@angular/router';
 import { DogDataService } from '../services/dog-data.service';
+import { Dog } from '../model/dog';
 
 @Component({
   selector: 'app-user-profile',
@@ -12,14 +13,17 @@ import { DogDataService } from '../services/dog-data.service';
 export class UserProfileComponent implements OnInit {
 
   private user: User;
-  private userDogs: string[];
+  private userDogs: Dog[];
+  dogs = [];
 
-  constructor(private userDataService: UserDataService, private router: Router, private dogDataService: DogDataService) { }
+  constructor(private userDataService: UserDataService, private router: Router, private dogDataService: DogDataService) {
+  }
 
   ngOnInit() {
     this.user = this.userDataService.getUserData();
-    this.dogDataService.getUserDogs(this.user.name).subscribe(data =>
-      this.userDogs.push(data));
+    this.dogDataService.getUserDogs(this.user.name).subscribe((data: Dog[]) => {
+      this.userDogs = data;
+    });
   }
 
   logout() {

@@ -11,16 +11,13 @@ export class UserDataService {
   private currentUser: User;
 
   register(user: User): Observable<User> {
-    console.log(user);
     this.users.push(user);
-    console.log(this.users);
     localStorage.setItem('member-data', JSON.stringify(this.users));
     return of(user).pipe(delay(2000));
   }
 
   login(email: string, password: string): Observable<User> {
     this.currentUser = JSON.parse(localStorage.getItem('member-data')).find(user => user.email === email && user.password === password)
-    console.log(this.currentUser);
     return of(this.currentUser).pipe(
       () => !this.currentUser ? throwError('This is an error!') : of(this.currentUser),
       delay(1000)

@@ -1,7 +1,5 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {map} from 'rxjs/operators';
-import { User } from '../model/user';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Dog } from '../model/dog';
 import { Observable, of } from 'rxjs';
 
@@ -13,8 +11,7 @@ import { Observable, of } from 'rxjs';
 export class DogDataService {
   URL = 'https://dog.ceo/api/breeds/list/all';
   dogsList = [];
-  dogURL = ''
-  private dogs: Dog[] = [];
+  dogs = [];
 
   constructor(private http: HttpClient) {
   }
@@ -25,14 +22,7 @@ export class DogDataService {
     });
   }
 
-  // getOneDog(dog) {
-  //   return this.http.get(`https://dog.ceo/api/breed/${dog}/images/random`).pipe(map((res: {message}) => {
-  //     this.dogURL = res.message;
-  //     return this.dogURL;
-  //   }));
-  // }
-
-  getUserDogs(userName: string): Observable<Dog> {
+  getUserDogs(userName: string): Observable<Dog[]> {
     return of(JSON.parse(localStorage.getItem('dogs')).filter(dog => dog.owner === userName));
 
   }

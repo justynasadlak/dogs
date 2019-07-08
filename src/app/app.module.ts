@@ -7,20 +7,19 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { CustomMaterialModule } from './custom-material/custom-material.module';
 import { RegisterComponent } from './register/register.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SidenavOverviewComponent } from './member/sidenav-overview/sidenav-overview.component';
-import { DogCreatorComponent } from './dog-creator/dog-creator.component';
 import { HttpClientModule } from '@angular/common/http';
-import { DogsListComponent } from './dogs-list/dogs-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, UserProfileComponent, SidenavOverviewComponent, DogCreatorComponent, DogsListComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, SidenavOverviewComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     CustomMaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
 
   ],
   providers: [],

@@ -15,11 +15,11 @@ export class SidenavOverviewComponent implements OnInit {
   },
     {
       displayName: 'Dog Creator',
-      route: 'dog-creator'
+      route: 'my-profile/dog-creator'
     },
     {
       displayName: 'Dog table',
-      route: 'dogs-list'
+      route: 'my-profile/dogs-list'
     }
   ];
 

@@ -4,9 +4,15 @@
       My Dogs
     </mat-card-header>
     <mat-card-content *ngFor="let dog of userDogs">
-      <p>{{ dog.name }}</p>
-      <p>{{ dog.breed }}</p>
-      <img src="{{dog.url}}"/>
+      <mat-card>
+        <mat-card-header>
+          {{ dog.name }}
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ dog.breed }}</p>
+          <img src="{{dog.url}}"/>
+        </mat-card-content>
+      </mat-card>
 
     </mat-card-content>
 

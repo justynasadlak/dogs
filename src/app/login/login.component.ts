@@ -14,6 +14,7 @@ export class LoginComponent {
   value = 50;
 
   private spinner = false;
+
   constructor(private userDataService: UserDataService, private formBuilder: FormBuilder, private router: Router) {
   }
 
@@ -23,14 +24,10 @@ export class LoginComponent {
   });
 
 
-
   onSubmit() {
     this.spinner = true;
-    console.log(this.loginForm.value);
-    console.log('login');
     this.userDataService.login(this.loginForm.value.email, this.loginForm.value.password)
       .subscribe(data => {
-        // console.log(data);
           this.router.navigate(['my-profile']);
         }, e => {
           console.error(e);

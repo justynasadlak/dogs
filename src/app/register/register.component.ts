@@ -28,11 +28,8 @@ export class RegisterComponent {
 
   onSubmit() {
     this.spinner = true;
-    console.log(this.registerForm.value.name);
     this.userDataService.register(this.registerForm.value).subscribe(data => {
-      console.log(data);
-      // this.router.navigate(['login']);
+      this.router.navigate(['login']);
     });
-    // this.registerForm.reset();
   }
 }
