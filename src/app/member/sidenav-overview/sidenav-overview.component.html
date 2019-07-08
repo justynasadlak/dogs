@@ -1,0 +1,10 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="side" opened>
+    <mat-list role="list">
+      <a mat-list-item *ngFor="let item of navItems" (click)="onItemSelected(item)">{{item.displayName}}</a>
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

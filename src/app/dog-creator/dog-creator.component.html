@@ -1,0 +1,53 @@
+<!--<form class="example-form" [formGroup]="dogForm" (ngSubmit)="onSubmit()">-->
+  <!--<mat-form-field class="example-full-width">-->
+    <!--<input matInput placeholder="Name" type="text" formControlName="name" />-->
+  <!--</mat-form-field>-->
+  <!--<mat-form-field class="example-full-width">-->
+    <!--<mat-select formControlName="breed">-->
+      <!--<mat-option *ngFor="let dog of dogs" [value]="dog" >-->
+        <!--{{dog}}-->
+      <!--</mat-option>-->
+    <!--</mat-select>-->
+    <!--<input matInput placeholder="Breed" type="text" formControlName="breed" />-->
+  <!--</mat-form-field>-->
+  <!--<mat-form-field class="example-full-width">-->
+    <!--<input matInput placeholder="Subbreed" type="text" formControlName="subbreed" />-->
+  <!--</mat-form-field>-->
+  <!--<mat-form-field class="example-full-width">-->
+    <!--<input matInput placeholder="Owner" type="text" formControlName="owner" />-->
+  <!--</mat-form-field>-->
+  <!--<button mat-flat-button color="primary" type="submit" [disabled]="!itemForm.valid">-->
+    <!--Submit-->
+  <!--</button>-->
+<!--</form>-->
+
+<form [formGroup]="dogForm" (ngSubmit)="onSubmit()">
+  <mat-form-field class="example-full-width">
+  <input matInput placeholder="Name" type="text" formControlName="name" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Breed: </mat-label>
+    <mat-select formControlName="breed">
+      <mat-option *ngFor="let dog of dogs" [value]="dog" >
+        {{dog}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Owner: </mat-label>
+    <mat-select formControlName="owner">
+      <mat-option *ngFor="let user of users" [value]="user" >
+        {{user}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <!--<mat-form-field class="example-full-width">-->
+  <!--<input matInput placeholder="Owner" type="text" formControlName="owner" />-->
+  <!--</mat-form-field>-->
+  <button mat-button color="primary" type="submit" [disabled]="!dogForm.valid">Submit</button>
+
+</form>
+
+<div>
+  <img src="{{dogURL}}" >
+</div>

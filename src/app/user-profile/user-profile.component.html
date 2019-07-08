@@ -1,0 +1,33 @@
+<div class="dogs__wrapper">
+  <mat-card>
+    <mat-card-header>
+      My Dogs
+    </mat-card-header>
+    <mat-card-content *ngFor="let dog of userDogs">
+      <p>{{ dog.name }}</p>
+      <p>{{ dog.breed }}</p>
+      <img src="{{dog.url}}"/>
+
+    </mat-card-content>
+
+  </mat-card>
+</div>
+
+<div class="login__wrapper">
+  <mat-card>
+    <mat-card-header>
+      User Profile
+    </mat-card-header>
+    <mat-card-content>
+      <p>Name: {{ user.name }}</p>
+      <p>Email: {{ user.email }}</p>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-flat-button color="primary" type="submit" (click)="logout()">
+        LOG OUT
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+
